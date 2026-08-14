@@ -1,0 +1,214 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    min-height: 100vh;
+    font-family: "Fredoka", sans-serif;
+
+    background:
+        radial-gradient(circle at top, #ffd6a5 0%, transparent 45%),
+        linear-gradient(135deg, #f7b267, #f4845f);
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    padding: 20px;
+
+    color: #3d2924;
+}
+
+.container {
+    width: 100%;
+    max-width: 520px;
+}
+
+.card {
+    background: rgba(255, 248, 235, 0.94);
+
+    border-radius: 30px;
+
+    padding: 25px 20px 30px;
+
+    text-align: center;
+
+    box-shadow:
+        0 20px 50px rgba(80, 35, 20, 0.25);
+
+    backdrop-filter: blur(8px);
+
+    animation: cardAppear 0.8s ease;
+}
+
+#lizard {
+    width: 100%;
+    overflow: hidden;
+
+    border-radius: 22px;
+
+    margin-bottom: 25px;
+
+    box-shadow:
+        0 10px 25px rgba(80, 35, 20, 0.18);
+
+    background: #e8b27c;
+}
+
+#lizard img {
+    width: 100%;
+    display: block;
+
+    max-height: 380px;
+    object-fit: cover;
+
+    animation: lizardAppear 0.8s ease;
+}
+
+#message {
+    font-size: 25px;
+    line-height: 1.4;
+
+    min-height: 70px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    padding: 0 10px;
+
+    animation: messageAppear 0.5s ease;
+}
+
+#nextBtn {
+    border: none;
+
+    background: #d85c45;
+    color: white;
+
+    font-family: inherit;
+    font-size: 18px;
+    font-weight: 600;
+
+    padding: 14px 25px;
+
+    border-radius: 50px;
+
+    cursor: pointer;
+
+    box-shadow:
+        0 7px 0 #a94232,
+        0 12px 20px rgba(100, 35, 20, 0.18);
+
+    transition:
+        transform 0.15s ease,
+        box-shadow 0.15s ease,
+        background 0.2s ease;
+}
+
+#nextBtn:hover {
+    background: #c94f39;
+
+    transform: translateY(-2px);
+
+    box-shadow:
+        0 9px 0 #a94232,
+        0 15px 25px rgba(100, 35, 20, 0.22);
+}
+
+#nextBtn:active {
+    transform: translateY(5px);
+
+    box-shadow:
+        0 2px 0 #a94232,
+        0 5px 10px rgba(100, 35, 20, 0.15);
+}
+
+/* Kartın ilk açılış animasyonu */
+
+@keyframes cardAppear {
+    from {
+        opacity: 0;
+        transform: translateY(25px) scale(0.97);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+    }
+}
+
+/* Kertenkele animasyonu */
+
+@keyframes lizardAppear {
+    from {
+        opacity: 0;
+        transform: scale(0.96);
+    }
+
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+/* Yazı animasyonu */
+
+@keyframes messageAppear {
+    from {
+        opacity: 0;
+        transform: translateY(8px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Telefon */
+
+@media (max-width: 600px) {
+
+    body {
+        padding: 12px;
+    }
+
+    .card {
+        padding: 15px 14px 22px;
+        border-radius: 24px;
+    }
+
+    #lizard {
+        border-radius: 18px;
+        margin-bottom: 20px;
+    }
+
+    #lizard img {
+        max-height: 300px;
+    }
+
+    #message {
+        font-size: 22px;
+        min-height: 65px;
+    }
+
+    #nextBtn {
+        width: 100%;
+        font-size: 17px;
+        padding: 14px 20px;
+    }
+}
+
+@media (max-height: 700px) {
+
+    #lizard img {
+        max-height: 260px;
+    }
+
+    #message {
+        min-height: 55px;
+    }
+}
